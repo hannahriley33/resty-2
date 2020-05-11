@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
-import FETCH CALL
+import { makeRequest } from '../../Services/fetchRequest';
 import { useLocalStorage } from './localStorage';
 
 const RestyContext = createContext();
