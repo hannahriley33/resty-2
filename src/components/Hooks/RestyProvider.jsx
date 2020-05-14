@@ -1,5 +1,6 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import { makeRequest } from '../../Services/fetchRequest';
+import { useLocalStorage } from './localStorage';
 
 const RestyContext = createContext();
 
@@ -8,6 +9,7 @@ export const RestyProvider = ({ children }) => {
   const [method, setMethod] = useState('GET');
   const [body, setBody] = useState('');
   const [response, setResponse] = useState({});
+  const [history, setHistory] = useLocalStorage('history', []);
 
   const onChange = ({ target }) => {
     if(target.name === 'url') setUrl(target.value);
@@ -18,12 +20,16 @@ export const RestyProvider = ({ children }) => {
   const onSubmit = ({ event }) => {
     event.preventDefault();
     makeRequest(url, method, body)
-      .then(response => setResponse(response));
+      .then(response => {
+        setResponse(response)
+        setHistory(prevHistory => [{ url, method }, ...prevHistory]);
+      });
   };
 
   const context = {
     url, 
     method,
+    history,
     body,
     onChange,
     onSubmit,

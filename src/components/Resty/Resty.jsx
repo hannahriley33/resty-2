@@ -1,12 +1,12 @@
 import React from 'react';
 import Request from '../../components/Request/Request';
 import Response from '../../components/Response/Response';
-import HistoryList from '../../components/History/HistoryList';
+import HistoryDeck from '../History/HistoryDeck';
 
 
 const Resty = () => (
   <>
-    <HistoryList />
+    <HistoryDeck />
     <Request />
     <Response />
   </>
