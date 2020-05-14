@@ -3,10 +3,11 @@ import { RestyProvider } from '../Hooks/RestyProvider';
 import RestyDisplay from '../RestyDisplay/RestyDisplay';
 
 
+
 export default function App() {
   return (
     <RestyProvider>
-      <RestyDisplay />
+      <Resty />
     </RestyProvider>
   );
 }
