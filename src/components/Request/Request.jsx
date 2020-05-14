@@ -2,7 +2,7 @@ import React from 'react';
 import { useResty } from '../Hooks/RestyProvider';
 
 const Request = () => {
-  const { url, method, body, onChange } = useResty();
+  const { url, method, body, onChange, onSubmit } = useResty();
   return (
   <form onSubmit={onSubmit}> 
     <input type="text" name="url" value={url} onChange={onChange} />
