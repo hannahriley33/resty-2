@@ -13,8 +13,8 @@ export const RestyProvider = ({ children }) => {
 
   const onChange = ({ target }) => {
     if(target.name === 'url') setUrl(target.value);
-    if(target.name === 'method') setUrl(target.value);
-    if(target.name === 'body') setUrl(target.value);
+    if(target.name === 'method') setMethod(target.value);
+    if(target.name === 'body') setBody(target.value);
   };
 
   const onSubmit = ({ event }) => {

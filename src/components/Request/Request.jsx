@@ -9,22 +9,22 @@ const Request = () => {
     <input type="text" name="url" value={url} onChange={onChange} />
 
     <label>
-      <input type="radio" name="method" checked={method === 'POST'} value="POST" />
+      <input type="radio" name="method" checked={method === 'POST'} value="POST" onChange={onChange}/>
       POST
     </label>
 
     <label>
-      <input type="radio" name="method" checked={method === 'GET'} value="GET" />
+      <input type="radio" name="method" checked={method === 'GET'} value="GET" onChange={onChange}/>
       GET
     </label>
 
     <label>
-      <input type="radio" name="method" checked={method === 'PUT'} value="PUT" />
+      <input type="radio" name="method" checked={method === 'PUT'} value="PUT" onChange={onChange}/>
       PUT
     </label>
 
     <label>
-      <input type="radio" name="method" checked={method === 'PATCH'} value="PATCH" />
+      <input type="radio" name="method" checked={method === 'PATCH'} value="PATCH" onChange={onChange}/>
       PATCH
     </label>
 
